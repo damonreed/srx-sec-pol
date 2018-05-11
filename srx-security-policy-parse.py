@@ -88,9 +88,9 @@ def parseConfig(cfgFile):
 def main():
     args = sys.argv[1:]
 
-    if not args:
-        print("usage: [--outfile file] configfile")
-        sys.exit(1)
+    # if not args:
+    #     print("usage: [--outfile file] configfile")
+    #     sys.exit(1)
 
     outFile = ''
     if args[0] == '--outfile':
