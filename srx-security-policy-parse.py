@@ -87,20 +87,15 @@ def parseConfig(cfgFile):
 
 def main():
     args = sys.argv[1:]
-
-    # if not args:
-    #     print("usage: [--outfile file] configfile")
-    #     sys.exit(1)
-
+    cfgFile = "srx.cfg"
     outFile = ''
-    if args[0] == '--outfile':
-        outFile = args[1]
-        del args[0:2]
 
-    if args[0]:
-        cfgFile = args[0]
-    else:
-        cfgFile = "srx.cfg"
+    if args:
+        if args[0] == '--outfile':
+            outFile = args[1]
+            del args[0:2]
+        if args[0]:
+            cfgFile = args[0]
 
     if not os.path.isfile(cfgFile):
         print("%s: file not found" % cfgFile)
